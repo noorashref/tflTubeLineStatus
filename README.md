@@ -16,7 +16,8 @@ Coroutines
 Kotlin Flow
 JUnit 
 
-<img src="https://user-images.githubusercontent.com/49866308/216114966-4f67584e-83fa-4bcf-b33d-aec635836fe4.png" width="350" height="680">
+<img src="https://user-images.githubusercontent.com/49866308/216130432-2dd2dac1-2551-49b1-8e3c-0bedce91d702.png" width="350" height="680">
+
 
 # Architecture
 A well planned architecture is extremely important for an app to scale and all architectures have one common goal- to manage complexity of your app. This isn't something to be worried about in smaller apps however it may prove very useful when working on apps with longer development lifecycle and a bigger team.
