@@ -2,6 +2,7 @@ package com.example.tfl.presentation.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -10,6 +11,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.tfl.data.remote.TubeLineResponsesItem
 
@@ -52,6 +56,7 @@ fun TubeLineCard(
                     ),
                     modifier = Modifier
                         .fillMaxHeight()
+                        .focusable(true)
                         .background(
                             Color(
                                 android.graphics.Color.parseColor
@@ -59,7 +64,25 @@ fun TubeLineCard(
                             ),
                         )
                 )
-                Text(text = title, modifier = Modifier.padding(start = 10.dp))
+                Text(text = title,
+                    modifier = Modifier
+                        .padding(start = 10.dp)
+                        .focusable(true)
+                        .semantics { contentDescription = title }
+
+                )
+                Spacer(modifier = Modifier.weight(1f))
+                Text(
+                    text = tubeLineResponses.lineStatuses[0].statusSeverityDescription,
+                    modifier = Modifier
+                        .padding(end = 20.dp)
+                        .focusable(true)
+                        .semantics {
+                            contentDescription =
+                                tubeLineResponses.lineStatuses[0].statusSeverityDescription
+                        },
+                    textAlign = TextAlign.End
+                )
             }
         }
     }
