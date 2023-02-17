@@ -24,9 +24,8 @@ fun TubeLineCard(
     tubeLineResponses: TubeLineResponsesItem
 ) {
     val title = tubeLineResponses.name
-    val id = tubeLineResponses.id
 
-    val hashMap = hashMapOf<String, String>(
+    val hashMap = hashMapOf(
         "bakerloo" to "#894E24",
         "central" to "#DC241F",
         "circle" to "#FFCE00",
