@@ -72,8 +72,13 @@ fun TubeLineCard(
 
                 )
                 Spacer(modifier = Modifier.weight(1f))
+
+                var status  = tubeLineResponses.lineStatuses.joinToString(", "){
+                    it.statusSeverityDescription
+                }
+
                 Text(
-                    text = tubeLineResponses.lineStatuses[0].statusSeverityDescription,
+                    text = status,
                     modifier = Modifier
                         .padding(end = 20.dp)
                         .focusable(true)
